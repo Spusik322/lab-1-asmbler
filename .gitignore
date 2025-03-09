@@ -37,3 +37,5 @@ lab-2-asmbler/x64/Debug/lab-2-asmbler.tlog/Masm.write.1u.tlog
 lab-2-asmbler/x64/Debug/lab-2-asmbler.tlog/unsuccessfulbuild
 lab-2-asmbler/x64/Debug/vc143.idb
 lab-2-asmbler/x64/Debug/vc143.pdb
+*.vsidx
+*.db

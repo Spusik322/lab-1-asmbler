@@ -3,9 +3,9 @@
 
 int main() {
     setlocale(LC_ALL, "russian");
-    unsigned _int16 A1 = 0xF1FF, A2 = 0xFFFF, A3 = 0x1FFF;
-    unsigned _int16 B1 = 0xABCD, B2 = 0xABC0, B3 = 0x0000;
-    unsigned _int16 C1, C2, C3;
+    short A1 = 0x7FFF, A2 = 0x0000, A3 = 0x8FFF;
+    short B1 = 0xABCD, B2 = 0x0000, B3 = 0x0001;
+    short C1, C2, C3;
 
     _asm {
         mov ax, A1
@@ -30,11 +30,11 @@ int main() {
     }
 
     std::cout << "В шеснадцатиричной: ";
-    std::cout << std::hex << std::setfill('0') << std::setw(4) << C3 << " ";
-    std::cout << std::hex << std::setfill('0') << std::setw(4) << C2 << " ";
-    std::cout << std::hex << std::setfill('0') << std::setw(4) << C1 << "\n";
+    std::cout << std::hex << std::setfill('0') << std::setw(4) << static_cast<int>(C3 & 0xFFFF) << " ";
+    std::cout << std::hex << std::setfill('0') << std::setw(4) << static_cast<int>(C2 & 0xFFFF) << " ";
+    std::cout << std::hex << std::setfill('0') << std::setw(4) << static_cast<int>(C1 & 0xFFFF) << "\n";
 
-    unsigned _int64 result = static_cast<unsigned _int64>(C3);
+    long long result = static_cast<long long>(C3);
     result = (result << 16) | C2;
     result = (result << 16) | C1;
 
