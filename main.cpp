@@ -3,9 +3,10 @@
 
 int main() {
     setlocale(LC_ALL, "russian");
-    short A1 = 0x7FFF, A2 = 0x0000, A3 = 0x8FFF;
-    short B1 = 0xABCD, B2 = 0x0000, B3 = 0x0001;
-    short C1, C2, C3;
+    short A1 = 0x7FFF, A2 = 0x0000;
+    short B1 = 0xABCD, B2 = 0x0000;
+    unsigned short A3 = 0x8FFF, B3 = 0x0001, C3;
+    short C1, C2;
 
     _asm {
         mov ax, A1
